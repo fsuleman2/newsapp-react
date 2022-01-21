@@ -12,6 +12,7 @@ export class News extends Component {
               title="cricket"
               description="Some quick example text to build on the card title and make up the
             bulk of the card's content."
+            imageUrl="https://premium.vgc.no/ap/images/bd89d0be-e705-4c34-9d52-1a56b5059cd6?fit=crop&q=80&w=1440"
             />
           </div>
           <div className="col-md-4 ">
@@ -19,6 +20,8 @@ export class News extends Component {
               title="cricket"
               description="Some quick example text to build on the card title and make up the
             bulk of the card's content."
+            imageUrl="https://premium.vgc.no/ap/images/bd89d0be-e705-4c34-9d52-1a56b5059cd6?fit=crop&q=80&w=1440"
+            
             />
           </div>
           <div className="col-md-4">
@@ -26,6 +29,7 @@ export class News extends Component {
               title="cricket"
               description="Some quick example text to build on the card title and make up the
             bulk of the card's content."
+            imageUrl="https://premium.vgc.no/ap/images/bd89d0be-e705-4c34-9d52-1a56b5059cd6?fit=crop&q=80&w=1440"
             />
           </div>
         </div>
