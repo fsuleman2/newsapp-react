@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import NewsItem from "./NewsItem";
-
-export class News extends Component {
-  articles=[
+{
+  "status": "ok",
+  "totalResults": 38,
+  "articles": [
     {
       "source": { "id": null, "name": "New York Times" },
       "author": "Mark Landler, Stephen Castle",
@@ -204,32 +203,4 @@ export class News extends Component {
       "content": "Michael Madsen is mourning the death of his son Hudson Madsen.\r\nThe Department of the Medical Examiner in Honolulu, Hawaii, confirmed to E! News that Hudson died on Jan 23. The department said an aut… [+767 chars]"
     }
   ]
-  constructor(){
-    super();
-    console.log("hello i am a constructor from news component");
-    this.state={
-      articles:this.articles,
-      loading:false
-    }
-  }
-  render() {
-    return (
-      <div className="container my-2">
-        <h2>NewsMonkey - Top Headlines</h2>
-        <div className="row my-3">
-          <div className="col-md-4">
-            <NewsItem
-              title="cricket"
-              description="Some quick example text to build on the card title and make up the
-            bulk of the card's content."
-            imageUrl="https://premium.vgc.no/ap/images/bd89d0be-e705-4c34-9d52-1a56b5059cd6?fit=crop&q=80&w=1440"
-            newsUrl="TODO"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
-
-export default News;
