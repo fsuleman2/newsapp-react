@@ -2,214 +2,21 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 
 export class News extends Component {
-  articles=[
-    {
-      "source": { "id": null, "name": "New York Times" },
-      "author": "Mark Landler, Stephen Castle",
-      "title": "U.K. Police Say They Are Investigating Downing Street Lockdown Parties - The New York Times",
-      "description": "Prime Minister Boris Johnson has come under fire over revelations that he and his staff attended parties while the country was in a coronavirus lockdown.",
-      "url": "https://www.nytimes.com/2022/01/25/world/europe/uk-boris-johnson-parties-police.html",
-      "urlToImage": "https://static01.nyt.com/images/2022/01/25/world/25uk-parties/25uk-parties-facebookJumbo.jpg",
-      "publishedAt": "2022-01-25T16:22:00Z",
-      "content": "His official spokesman said the prime minister did not believe he had broken the law. No mention of the police investigation was made during a cabinet meeting on Tuesday morning, although Mr. Johnson… [+1542 chars]"
-    },
-    {
-      "source": { "id": null, "name": "CNBC" },
-      "author": "Michael Wayland",
-      "title": "GM to spend $6.6 billion on EV plant investments in bid to dethrone Tesla in electric car sales by 2025 - CNBC",
-      "description": "GM has said it will sell more than 1 million EVs globally by mid-decade and overtake Tesla as America's top seller of electric vehicles during that time frame.",
-      "url": "https://www.cnbc.com/2022/01/25/gm-investing-6point6-billion-in-bid-to-dethrone-tesla-in-ev-sales-by-2025.html",
-      "urlToImage": "https://image.cnbcfm.com/api/v1/image/106997182-1641409335960-gettyimages-1237550001-CES_2022.jpeg?v=1641409378",
-      "publishedAt": "2022-01-25T16:00:56Z",
-      "content": "Mary Barra, chief executive officer of General Motors Co., presents the new Silverado elective vehicle during a live-streamed event at the CES 2022 trade show in Las Vegas, Nevada, U.S., on Wednesday… [+4418 chars]"
-    },
-    {
-      "source": { "id": null, "name": "Investor's Business Daily" },
-      "author": "Investor's Business Daily",
-      "title": "GE Stock Tumbles On Mixed Earnings, Weak Guidance; Raytheon Steady - Investor's Business Daily",
-      "description": "Raytheon and GE topped Q4 EPS views, but revenue was light.",
-      "url": "https://www.investors.com/news/ge-stock-falls-ge-earnings-q4-2021-raytheon-textron/",
-      "urlToImage": "https://www.investors.com/wp-content/uploads/2018/02/stock-GE-10-shutter.jpg",
-      "publishedAt": "2022-01-25T15:55:00Z",
-      "content": "General Electric (GE) and Raytheon Technologies (RTX) reported better-than-expected fourth-quarter earnings Tuesday, but revenue and 2022 guidance came up light. GE stock tumbled while Raytheon was l… [+3682 chars]"
-    },
-    {
-      "source": { "id": null, "name": "NBCSports.com" },
-      "author": "Michael David Smith",
-      "title": "Bills-Chiefs draws 42.7 million viewers, most for divisional round in five years - NBC Sports",
-      "description": "A huge audience was watching the Chiefs’ thrilling overtime win over the Bills on Sunday night.CBS announced an audience of 42.7 million viewers for the game. That number represents the average audience at any given time during the game; the audience peaked a…",
-      "url": "https://profootballtalk.nbcsports.com/2022/01/25/bills-chiefs-draws-42-7-million-viewers-most-for-divisional-round-in-five-years/",
-      "urlToImage": "https://profootballtalk.nbcsports.com/wp-content/uploads/sites/25/2022/01/GettyImages-1366672335-e1643125759267.jpg",
-      "publishedAt": "2022-01-25T15:49:00Z",
-      "content": "A huge audience was watching the Chiefs thrilling overtime win over the Bills on Sunday night.\r\nCBS announced an audience of 42.7 million viewers for the game. That number represents the average audi… [+561 chars]"
-    },
-    {
-      "source": { "id": "associated-press", "name": "Associated Press" },
-      "author": "Lauran Neergaard",
-      "title": "Pfizer begins testing omicron-matched COVID shots in adults - Associated Press",
-      "description": "Pfizer has begun a study comparing its original COVID-19 vaccine with doses specially tweaked to match the hugely contagious omicron variant .",
-      "url": "https://apnews.com/article/pfizer-covid-vaccine-omicron-study-63cc1e6ee7c9c23e8795ce9bbd448ce9",
-      "urlToImage": "https://storage.googleapis.com/afs-prod/media/61b3980bb9d04e219cd858722211fc2f/3000.jpeg",
-      "publishedAt": "2022-01-25T15:45:00Z",
-      "content": "Pfizer has begun a study comparing its original COVID-19 vaccine with doses specially tweaked to match the hugely contagious omicron variant.\r\nPfizer and its partner BioNTech announced the study on T… [+2814 chars]"
-    },
-    {
-      "source": { "id": "cnn", "name": "CNN" },
-      "author": "Scottie Andrew, CNN",
-      "title": "Neil Young wants his music scrubbed from Spotify because of vaccine misinformation on the platform - CNN",
-      "description": "In a now-deleted letter, Young, an advocate for Covid-19 safety and prevention, said Spotify \"can have [Joe] Rogan or Young. Not both.\"",
-      "url": "https://www.cnn.com/2022/01/25/entertainment/neil-young-spotify-joe-rogan-vaccine-misinformation-cec/index.html",
-      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220125144358-neil-young-spotify-music-removed-vaccine-misinformation-cec-file-090919-super-tease.jpg",
-      "publishedAt": "2022-01-25T15:37:00Z",
-      "content": "(CNN)Neil Young, an outspoken advocate for Covid-19 safety and prevention, doesn't want his music to share a home with vaccine misinformation. \r\nIn a now-deleted post on his website, Young asked his … [+1533 chars]"
-    },
-    {
-      "source": { "id": "cnn", "name": "CNN" },
-      "author": "Analysis by Jill Dougherty, for CNN",
-      "title": "The West fears Russia is about to attack Ukraine. But that's not the way Russians are seeing it on TV - CNN",
-      "description": "Foreign forces bristling with weapons are rolling toward the Ukrainian border. Reconnaissance planes streak overhead. Rumors of \"false flag\" operations run rampant.",
-      "url": "https://www.cnn.com/2022/01/25/europe/ukraine-nato-russia-coverage-tv-media-cmd-intl/index.html",
-      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220121132348-02-lead-image-russia-ukraine-border-tensions-super-tease.jpg",
-      "publishedAt": "2022-01-25T15:24:00Z",
-      "content": null
-    },
-    {
-      "source": { "id": "cnn", "name": "CNN" },
-      "author": "Eric Levenson, CNN",
-      "title": "SAT will soon be all-digital and shortened from 3 hours to 2 - CNN",
-      "description": "The SAT taken by prospective college students across the country will go all-digital starting in 2024 and will be an hour shorter, the College Board announced in a statement Tuesday.",
-      "url": "https://www.cnn.com/2022/01/25/us/sat-test-digital/index.html",
-      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200416004126-sat-college-board-file-super-tease.jpg",
-      "publishedAt": "2022-01-25T15:16:00Z",
-      "content": "(CNN)The SAT taken by prospective college students across the country will go all-digital starting in 2024 and will be an hour shorter, the College Board announced in a statement Tuesday.\r\n\"The digit… [+2879 chars]"
-    },
-    {
-      "source": { "id": "reuters", "name": "Reuters" },
-      "author": null,
-      "title": "Explainer: Why Yemen is at war - Reuters",
-      "description": "Yemen's Iran-aligned Houthis have launched two missile attacks at the United Arab Emirates in the last week, raising the stakes in a ruinous and complex conflict.",
-      "url": "https://www.reuters.com/markets/stocks/why-yemen-is-war-2022-01-25/",
-      "urlToImage": "https://www.reuters.com/resizer/zpIr51wKijEWMKuve89bm9hnGSY=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/AQ5A2GXQ4RONDJO343AUL3TUBY.jpg",
-      "publishedAt": "2022-01-25T15:15:00Z",
-      "content": "DUBAI, Jan 25 (Reuters) - Yemen's Iran-aligned Houthis have launched two missile attacks at the United Arab Emirates in the last week, raising the stakes in a ruinous and complex conflict.\r\nMonday's … [+4776 chars]"
-    },
-    {
-      "source": { "id": null, "name": "New York Post" },
-      "author": "Jaclyn Hendricks",
-      "title": "Rob Gronkowski's NFL future may not be tied to Tom Brady - New York Post ",
-      "description": "Much like longtime friend and teammate Tom Brady, Rob Gronkowski is also thinking about his NFL future.",
-      "url": "https://nypost.com/2022/01/25/rob-gronkowskis-nfl-future-may-not-be-tied-to-tom-brady/",
-      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2022/01/newspress-collage-20955924-1643118988320.png?w=1024",
-      "publishedAt": "2022-01-25T15:12:00Z",
-      "content": "Much like longtime friend and teammate Tom Brady, Rob Gronkowski is also thinking about his NFL future. \r\nOne day after the Buccaneers fell to the Rams in the NFC Divisional Round of the playoffs, Gr… [+2621 chars]"
-    },
-    {
-      "source": { "id": null, "name": "Barron's" },
-      "author": "Jacob Sonenshine, Jack Denton",
-      "title": "Why Is the Stock Market Falling? Volatility Continues With Earnings, Fed Ahead - Barron's",
-      "description": "Following a huge turnaround Monday, stocks were lower Tuesday, with traders focused on the start of the Federal Reserve’s two-day monetary policy meeting.",
-      "url": "https://www.barrons.com/articles/stock-market-today-51643105849",
-      "urlToImage": "https://images.barrons.com/im-400258/social",
-      "publishedAt": "2022-01-25T15:09:00Z",
-      "content": "The stock market was tumblingagainTuesday, with the S&amp;P 500 back in correction territory following a massive turnaround Monday. All eyes were on the Federal Reserve as its two-day monetary policy… [+258 chars]"
-    },
-    {
-      "source": { "id": null, "name": "New York Times" },
-      "author": "Joey Roulette",
-      "title": "James Webb Telescope Arrives at Destination in Space: Updates and Video - The New York Times",
-      "description": "The telescope’s safe arrival is a relief to scientists who plan to spend the next 10 or more years using it to study ancient galaxies.",
-      "url": "https://www.nytimes.com/2022/01/24/science/james-webb-telescope-arrival.html",
-      "urlToImage": "https://static01.nyt.com/images/2022/01/25/science/24webb1/24webb1-facebookJumbo.jpg",
-      "publishedAt": "2022-01-25T15:08:00Z",
-      "content": "Deploying the telescope to the L2 neighborhood also helps keep the temperatures low while providing enough sunlight for the Webbs solar panels, which generate electricity. But the telescope isnt park… [+2003 chars]"
-    },
-    {
-      "source": { "id": "engadget", "name": "Engadget" },
-      "author": "https://www.engadget.com/about/editors/daniel-cooper",
-      "title": "Intellidash Pro is an easy way to get CarPlay in older vehicles - Engadget",
-      "description": "It's not the prettiest thing to sit on your dashboard, however..",
-      "url": "https://www.engadget.com/intellidash-pro-carplay-android-auto-150100414.html",
-      "urlToImage": "https://s.yimg.com/os/creatr-uploaded-images/2022-01/9a6cde80-7d29-11ec-afe3-2f79361061d1",
-      "publishedAt": "2022-01-25T15:02:39Z",
-      "content": "There are plenty of cars that lack the technology to leverage CarPlay or Android Auto, including my own 2012 Toyota Scion iM. And there are plenty of people who lack the desire or ability to swap out… [+3715 chars]"
-    },
-    {
-      "source": { "id": null, "name": "SciTechDaily" },
-      "author": null,
-      "title": "Researchers Discover Two Paths Toward “Super Immunity” to COVID-19 - SciTechDaily",
-      "description": "OHSU laboratory research compares routes to immunity involving vaccination. New laboratory research from Oregon Health & Science University reveals more than one path toward robust immunity from COVID-19. A new study finds that two forms of immunity – breakth…",
-      "url": "https://scitechdaily.com/researchers-discover-two-paths-toward-super-immunity-to-covid-19/",
-      "urlToImage": "https://scitechdaily.com/images/COVID-Coronavirus-Immunity.jpg",
-      "publishedAt": "2022-01-25T15:00:55Z",
-      "content": "OHSU laboratory research compares routes to immunity involving vaccination.\r\nNew laboratory research from Oregon Health &amp; Science University reveals more than one path toward robust immunity from… [+5586 chars]"
-    },
-    {
-      "source": { "id": null, "name": "Detroit Free Press" },
-      "author": "Susan Tompor, Detroit Free Press",
-      "title": "IRS letter 6419 for child tax credit may have inaccurate information - Detroit Free Press",
-      "description": "Parents may want to take an extra close look at IRS Letter 6419 before they file their taxes. Early reports indicate some errors possible.",
-      "url": "https://www.freep.com/story/money/personal-finance/susan-tompor/2022/01/24/wrong-dollar-amount-child-tax-credit-letter-6419/9202334002/",
-      "urlToImage": "https://www.gannett-cdn.com/presto/2022/01/20/PDTF/c0fac885-037a-432f-ae33-d832be405fdb-Letter_6419.jpg?auto=webp&crop=3773,2122,x0,y102&format=pjpg&width=1200",
-      "publishedAt": "2022-01-25T15:00:00Z",
-      "content": "The first potential glitch of tax season involves new concerns about the accuracy of some letters that the IRS is sending out relating to the child tax credit. \r\nThe Internal Revenue Service said it … [+6729 chars]"
-    },
-    {
-      "source": { "id": null, "name": "Fox Business" },
-      "author": "Brooke Singman",
-      "title": "Biden administration weighing 'severe' Russia sanctions in case of Ukraine invasion - Fox Business",
-      "description": "The Biden administration is continuing to prepare a \"range of severe economic measures\" to impose on Russia if it further attempts an invasion into Ukraine, with senior officials saying sanctions being considered would have \"massive consequences\" for Moscow's…",
-      "url": "https://www.foxbusiness.com/politics/biden-russia-sanctions-ukraine-invasion",
-      "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2022/01/0/0/Joe-Biden-Ukraine-Russia-Tension.jpg?ve=1&tl=1",
-      "publishedAt": "2022-01-25T14:53:53Z",
-      "content": "The Biden administration is continuing to prepare a \"range of severe economic measures\" to impose on Russia if it further attempts an invasion into Ukraine, with senior officials saying sanctions bei… [+7618 chars]"
-    },
-    {
-      "source": { "id": "ars-technica", "name": "Ars Technica" },
-      "author": "Andrew Cunningham",
-      "title": "Testing Intel’s 12th-gen Alder Lake laptop CPUs: Many cores make light work - Ars Technica",
-      "description": "The size of the speed improvements depends on the work you're doing.",
-      "url": "https://arstechnica.com/gadgets/2022/01/testing-intels-12th-gen-alder-lake-laptop-cpus-many-cores-make-light-work/",
-      "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2022/01/12th-gen-mobile-chip-pose-10-760x380.jpeg",
-      "publishedAt": "2022-01-25T14:00:43Z",
-      "content": "Enlarge/ Intel's 12th-generation Core chips are coming to laptops.\r\n39 with 28 posters participating\r\nWe were impressed with Intel's top-tier 12th-generation desktop chips. Though still power-hungry … [+2751 chars]"
-    },
-    {
-      "source": { "id": null, "name": "The Guardian" },
-      "author": "Laura Snapes",
-      "title": "Cardi B awarded almost £1m in damages in libel case against gossip blogger - The Guardian",
-      "description": "The New York rapper said that false allegations made by YouTube channel host Tasha K damaged her reputation and her mental health",
-      "url": "https://amp.theguardian.com/music/2022/jan/25/cardi-b-awarded-1m-in-damages-libel-tasha-k",
-      "urlToImage": "https://i.guim.co.uk/img/media/91abde26b45f960cc0bbe354660b99b68bfa5c98/0_0_3216_1930/master/3216.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=75e82b359a593edc3fd2f8dd4aab44d7",
-      "publishedAt": "2022-01-25T13:58:00Z",
-      "content": "Cardi B has been awarded $1.25m (£929,000) in damages as well as medical expenses of $250,000 in a libel lawsuit against a celebrity gossip blogger who claimed that the rapper was a prostitute who us… [+2272 chars]"
-    },
-    {
-      "source": { "id": "nfl-news", "name": "NFL News" },
-      "author": null,
-      "title": "NFL Power Rankings, Championship Sunday: Chiefs soar to No. 1 after EPIC win; Packers, Titans spiral - NFL.com",
-      "description": "How do the four remaining teams -- the Bengals, Chiefs, 49ers and Rams -- stack up heading into Championship Sunday? Where do the Divisional Round losers finish? Dan Hanzus provides a fresh batch of NFL Power Rankings.",
-      "url": "https://www.nfl.com/news/nfl-power-rankings-championship-sunday-2021-nfl-season",
-      "urlToImage": "https://static.www.nfl.com/image/private/t_editorial_landscape_12_desktop/league/dp9q7o4w0st4tpomjpwn",
-      "publishedAt": "2022-01-25T13:48:00Z",
-      "content": "The Football Gods repaid their debts in full.\r\nThe NFL followed a Super Wild Card Weekend decidedly low on high-octane drama with perhaps the greatest Divisional Round we've ever seen.\r\nBoth No. 1 se… [+570 chars]"
-    },
-    {
-      "source": { "id": null, "name": "Eonline.com" },
-      "author": "Elyse Dupre",
-      "title": "Michael Madsen's Son Hudson Dead at 26 - E! NEWS",
-      "description": "Reservoir Dogs actor Michael Madsen is mourning the loss of his 26-year-old son Hudson. As the family told Metro, \"We are heartbroken and overwhelmed with grief and pain.\"",
-      "url": "https://www.eonline.com/news/1317449/michael-madsens-son-hudson-dead-at-26",
-      "urlToImage": "https://akns-images.eonline.com/eol_images/Entire_Site/2022025/rs_1200x1200-220125043510-1200-Michael-Madsen-Hudson-Madesen-012522.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top",
-      "publishedAt": "2022-01-25T13:38:00Z",
-      "content": "Michael Madsen is mourning the death of his son Hudson Madsen.\r\nThe Department of the Medical Examiner in Honolulu, Hawaii, confirmed to E! News that Hudson died on Jan 23. The department said an aut… [+767 chars]"
-    }
-  ]
+
   constructor(){
     super();
     this.state={
-      articles:this.articles,
+      articles:[],
       loading:false
     }
+  }
+  async componentDidMount(){
+    let url ="https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=d582fe9cb37745c2a4c3a762a0085b03";
+    //using fetch api
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    //console.log(parsedData);
+    this.setState({articles:parsedData.articles})
   }
   render() {
     return (
@@ -221,9 +28,9 @@ export class News extends Component {
           return <div className="col-md-4" key={element.url}>
           <NewsItem
           newsUrl={element.url}
-            title={element.title.slice(0,45)}
-            description={element.description.slice(0,88)}
-          imageUrl={element.urlToImage}
+            title={element.title?element.title.slice(0,45):""}
+            description={element.description?element.description.slice(0,88):""}
+          imageUrl={element.urlToImage?element.urlToImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO0AAADVCAMAAACMuod9AAAAXVBMVEXv7+9mZmbs7OxfX1/39/d+fn6np6fX19fz8/POzs55eXlbW1uDg4PS0tJkZGRhYWFqamrn5+eLi4tWVlbh4eGUlJSqqqqhoaH7+/u+vr5vb2/Jycm/v7+Ojo6wsLDYus8vAAADXElEQVR4nO3b6XLiOhCGYWshtG0siWVCljNz/5c5LQhhiWAyFacO8rzPv2Bw1eeW1LIJTQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADcYMXKCKfRs4gd4TzfbT7MxzFUkFY6F3v3devYt2MMku/lZ6GbjWCR+uH+02ptR6mJLMY5z/eSbpQRKJq2itqOM99Ie39Ie4u91lUnmPZq1kmmFZHmSuDppZXN0G6ubIgnltbKZuvi2vzYSGlATyytn3frZFIMaVMq7sTSNj+jCSlq3lVT+MS00srcGZNCSsa4eeH4xNI+uxQ1qta3f55+bZ9dfNGwOpLjP5B23ufK5rjrtnC86rTiP7y0iPu0oZtWB7LWv66WFyuvH2La5Q2vpVgVp/Wvyc2Wl28dOuN699L6afVbaVN86WcXoazY/349vi7FyuWFaCpOK63J3SZ254+areb1XrfJxTuhWtP6IUQTc9zZ6cv27W7A7p6V7+prT26IKk0rw9vau1t9S5tEtRvOZ3d/daaVoQ+HtMl11743kW0n9ddW2vAeVjeJujIXM/itc4s8pt9fqTGtNtWYjrUtxc3zVx7WenOwypU91LfCtNp6jpXdi7O8zThZh2VpZRvy3Har/PfbgerSWhlMNJfiru+edZ0HF0Me5+uf9n2pri6tb81lZQ9xT3usf3RBB7ne2afdYN5/vLa0MiQX0se0eWU+dCLJq3EurDbkoIl1MNva0tpcOh3GpcruqtsdMlldjU/fFsLK79eputLqpuLjnD1w3X52Wvu07c/f5xa+vrR+cLEwio/V3Rc3h81z9jjMjVlIPlRTWtGw17O+x9VNRZ7Zx+uSH7m6RS58NWlz67md1bz13e2Hqa25damSmtLqLd4f0+oEXe777KWQd1X1fKPp2+RuzNlDFcNLviShlDeumlUlaeeD3rxfaz5nY1ZbbGEQpD7F+GPRz+8/re/MQxfMrfX4mLYs5EsVQ6ygtr5zn5izn1FDWulKm8Wppn3qPjGIJ5NW5+1ISHtv/r20I0zcVEva3sWv/3uynmJdQdrm18Moto/bzf8d5RPEy5MfQeEL3/sjdpxfP4zzY4zvZhu7zE8Uv2pZ/uYPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg7/0G6cMyGr/MjwcAAAAASUVORK5CYII="}
           />
         </div>
         })}
