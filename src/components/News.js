@@ -7,7 +7,9 @@ export class News extends Component {
     super();
     this.state={
       articles:[],
-      loading:false
+      loading:false,
+      page:1,
+      totalArticles:1
     }
   }
   async componentDidMount(){
@@ -16,7 +18,28 @@ export class News extends Component {
     let data = await fetch(url);
     let parsedData = await data.json();
     //console.log(parsedData);
-    this.setState({articles:parsedData.articles})
+    this.setState({articles:parsedData.articles, totalArticles: parsedData.totalResults})
+  }
+ handlePreviousClick = async()=>{
+  let url =`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=d582fe9cb37745c2a4c3a762a0085b03&page=${this.state.page - 1}&pageSize=20`;
+  let data = await fetch(url);
+  let parsedData = await data.json();
+  this.setState({page:this.state.page-1,articles:parsedData.articles})
+  }
+  handleNextClick = async()=>{
+    //agar next page hai to
+    if(this.state.page +1 > Math.ceil(this.state.totalArticles/20)){
+
+    }else{
+      let url =`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=d582fe9cb37745c2a4c3a762a0085b03&page=${this.state.page + 1}&pageSize=20`;
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    this.setState({
+      page:this.state.page+1,
+      articles:parsedData.articles
+    });
+    }
+    
   }
   render() {
     return (
@@ -35,6 +58,11 @@ export class News extends Component {
         </div>
         })}
         </div>
+          {/* pagination: adding prev and next buttons */}
+          <div className = "container d-flex justify-content-between">
+          <button type="button" className="btn btn-dark" onClick={this.handlePreviousClick} disabled={this.state.page<=1}> &larr; previous</button>
+          <button type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
+          </div>
       </div>
     );
   }
